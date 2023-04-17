@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/workspace
+
+    ports:
+      - "8501:8501"
+
+    privileged: true
+    working_dir: /workspace
+
+networks:
+    default:
+        driver: bridge    
